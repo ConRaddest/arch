@@ -1,0 +1,124 @@
+[mgr]
+cwd             = { fg = "#7aa2f7" }
+find_keyword    = { fg = "#e0af68", bold = true, underline = true }
+find_position   = { fg = "#c0caf5", bg = "reset", bold = true }
+marker_copied   = { fg = "#9ece6a", bg = "#9ece6a" }
+marker_cut      = { fg = "#f7768e", bg = "#f7768e" }
+marker_marked   = { fg = "#449dab", bg = "#449dab" }
+marker_selected = { fg = "#e0af68", bg = "#e0af68" }
+count_copied    = { fg = "#1a1b26", bg = "#9ece6a" }
+count_cut       = { fg = "#1a1b26", bg = "#f7768e" }
+count_selected  = { fg = "#1a1b26", bg = "#e0af68" }
+border_symbol   = "│"
+border_style    = { fg = "#565f89" }
+
+[indicator]
+parent  = { fg = "#c0caf5", bg = "#292e42" }
+current = { fg = "#c0caf5", bg = "#292e42" }
+preview = { fg = "#c0caf5", bg = "#292e42" }
+padding = { open = "▐", close = "▌" }
+
+[tabs]
+active    = { fg = "#1a1b26", bg = "#7aa2f7", bold = true }
+inactive  = { fg = "#7aa2f7", bg = "#292e42" }
+sep_inner = { open = " ", close = " " }
+sep_outer = { open = " ", close = " " }
+
+[mode]
+normal_main = { fg = "#1a1b26", bg = "#7aa2f7", bold = true }
+normal_alt  = { fg = "#7aa2f7", bg = "#292e42" }
+select_main = { fg = "#1a1b26", bg = "#449dab", bold = true }
+select_alt  = { fg = "#449dab", bg = "#292e42" }
+unset_main  = { fg = "#1a1b26", bg = "#a9b1d6", bold = true }
+unset_alt   = { fg = "#a9b1d6", bg = "#292e42" }
+
+[status]
+sep_left  = { open = " ", close = " " }
+sep_right = { open = " ", close = " " }
+perm_sep        = { fg = "#565f89" }
+perm_type       = { fg = "#7aa2f7" }
+perm_read       = { fg = "#e0af68" }
+perm_write      = { fg = "#f7768e" }
+perm_exec       = { fg = "#9ece6a" }
+progress_label  = { fg = "#c0caf5", bold = true }
+progress_normal = { fg = "#9ece6a", bg = "#292e42" }
+progress_error  = { fg = "#e0af68", bg = "#f7768e" }
+
+[confirm]
+border  = { fg = "#7aa2f7" }
+title   = { fg = "#7aa2f7", bold = true }
+body    = { fg = "#c0caf5" }
+list    = { fg = "#a9b1d6" }
+btn_yes = { fg = "#1a1b26", bg = "#7aa2f7", bold = true }
+btn_no  = { fg = "#c0caf5", bg = "#292e42" }
+
+[pick]
+border   = { fg = "#7aa2f7" }
+active   = { fg = "#c0caf5", bold = true }
+inactive = { fg = "#a9b1d6" }
+
+[input]
+border   = { fg = "#7aa2f7" }
+title    = { fg = "#7aa2f7" }
+value    = { fg = "#c0caf5" }
+selected = { reversed = true }
+
+[cmp]
+border   = { fg = "#7aa2f7" }
+active   = { fg = "#1a1b26", bg = "#7aa2f7" }
+inactive = { fg = "#a9b1d6" }
+
+[tasks]
+border  = { fg = "#7aa2f7" }
+title   = { fg = "#7aa2f7" }
+hovered = { fg = "#c0caf5", bold = true }
+
+[which]
+mask            = { bg = "#292e42" }
+cand            = { fg = "#449dab" }
+rest            = { fg = "#565f89" }
+desc            = { fg = "#c0caf5" }
+separator       = "  "
+separator_style = { fg = "#565f89" }
+
+[help]
+on      = { fg = "#449dab" }
+run     = { fg = "#c0caf5" }
+hovered = { reversed = true, bold = true }
+footer  = { fg = "#1a1b26", bg = "#a9b1d6" }
+
+[spot]
+border   = { fg = "#7aa2f7" }
+title    = { fg = "#7aa2f7" }
+tbl_col  = { fg = "#449dab" }
+tbl_cell = { fg = "#c0caf5", bg = "#292e42" }
+
+[notify]
+title_info  = { fg = "#9ece6a" }
+title_warn  = { fg = "#e0af68" }
+title_error = { fg = "#f7768e" }
+
+[icon]
+dirs = []
+prepend_conds = [
+  { if = "dir & hovered", text = "", fg = "#7aa2f7" },
+  { if = "dir",           text = "", fg = "#7aa2f7" },
+]
+
+[filetype]
+rules = [
+  { mime = "image/*", fg = "#c0caf5", bg = "#1a1b26" },
+  { mime = "{audio,video}/*", fg = "#c0caf5", bg = "#1a1b26" },
+  { mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", fg = "#c0caf5", bg = "#1a1b26" },
+  { mime = "application/{pdf,doc,rtf}", fg = "#c0caf5", bg = "#1a1b26" },
+  { mime = "vfs/{absent,stale}", fg = "#565f89", bg = "#1a1b26" },
+  { url = "*/", fg = "#a9b1d6", bg = "#1a1b26" },
+  { url = "*",  fg = "#c0caf5", bg = "#1a1b26" },
+
+  # Hidden files/folders: terminals do not support opacity here, so use a dimmer Tokyo Night color.
+  # These are last so they override the normal file/folder catch-all rules.
+  { url = ".*", fg = "#565f89", bg = "#1a1b26" },
+  { url = ".*/", fg = "#565f89", bg = "#1a1b26" },
+  { url = "*/.*", fg = "#565f89", bg = "#1a1b26" },
+  { url = "*/.*/", fg = "#565f89", bg = "#1a1b26" },
+]

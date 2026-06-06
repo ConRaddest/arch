@@ -1,0 +1,19 @@
+# Generated from ~/OS/home/starship.nix using ~/OS/themes/tokyo-night/theme.nix
+
+add_newline = false
+format = "$directory$git_branch$character"
+
+[character]
+success_symbol = "[❯](#7aa2f7)"
+error_symbol = "[❯](#f7768e)"
+
+[directory]
+style = "#7aa2f7"
+truncation_length = 3
+truncate_to_repo = false
+format = "[$path]($style) "
+
+[git_branch]
+symbol = ""
+style = "#7aa2f7"
+format = "[$symbol$branch]($style) "

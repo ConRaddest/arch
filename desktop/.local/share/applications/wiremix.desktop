@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Wiremix
+GenericName=Audio Mixer
+Comment=Configure audio device settings
+Exec=wiremix
+Terminal=true
+Type=Application
+Icon=/usr/share/icons/AdwaitaLegacy/48x48/legacy/multimedia-volume-control.png
+Keywords=pipewire;sound;audio
+Categories=Utility;Settings;ConsoleOnly;
+StartupNotify=false

@@ -1,0 +1,8 @@
+# Custom Yazi keybindings
+
+[mgr]
+prepend_keymap = [
+  # Use the configured open rules on Enter instead of entering directories.
+  # Directories are configured in yazi.toml to use the Code opener.
+  { on = "<Enter>", run = "open", desc = "Open in Code / default opener" },
+]

@@ -1,0 +1,8 @@
+#!/bin/bash
+# Package removal: fuzzy picker with no args, direct remove with args.
+
+if (( $# == 0 )); then
+  exec pkg-remove-fuzzy
+else
+  exec pkg-remove "$@"
+fi

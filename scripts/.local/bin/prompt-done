@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# summary=Display a "Done!" message with a spinner and wait for user to press any key.
+
+echo
+if command -v gum >/dev/null 2>&1; then
+  gum spin --spinner "globe" --title "Done! Press any key to close..." -- bash -c 'read -n 1 -s'
+else
+  printf 'Done! Press any key to close...'
+  read -n 1 -s
+  echo
+fi

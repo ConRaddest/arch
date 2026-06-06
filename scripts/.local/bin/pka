@@ -1,0 +1,8 @@
+#!/bin/bash
+# AUR/yay package install: fuzzy picker with no args, direct install with args.
+
+if (( $# == 0 )); then
+  exec aur-install-fuzzy
+else
+  exec aur-install "$@"
+fi
